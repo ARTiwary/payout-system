@@ -1,0 +1,16 @@
+{
+  "name": "payout-system",
+  "version": "1.0.0",
+  "description": "LLD implementation of a User Payout Management System (Advance Payout + Reconciliation + Withdrawal + Failed Payout Recovery)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node tests/demo.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  },
+  "license": "MIT"
+}
