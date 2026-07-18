@@ -1,21 +1,3 @@
-/**
- * In-memory repositories.
- *
- * These stand in for real DB-backed repositories (see schema.sql).
- * Node's single-threaded event loop means synchronous Map operations
- * here are atomic with respect to each other, which is what lets
- * services like AdvancePayoutService rely on a plain "check-then-set"
- * without an explicit lock. A SQL implementation would replace that
- * with `UPDATE ... WHERE status='pending' AND advance_paid_at IS NULL`
- * (see schema.sql) to get the same atomicity from the DB engine.
- *
- * Every method is `async` on purpose, even though the in-memory
- * implementation doesn't need to await anything — this keeps the
- * repository interface identical to what a real DB client would
- * expose, so swapping the implementation later doesn't ripple into
- * services/controllers.
- */
-
 class BaseRepository {
   constructor() {
     this.store = new Map();

@@ -1,8 +1,3 @@
-/**
- * Runs entirely in-process (no HTTP) against the service layer directly,
- * so it doubles as a functional test suite and a runnable demo.
- * Run with: npm test
- */
 const assert = require('assert');
 const { createContainer } = require('../src/container');
 const { User } = require('../src/models/User');
